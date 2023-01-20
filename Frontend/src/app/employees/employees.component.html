@@ -1,20 +1,6 @@
 
 <h1>Employee Management</h1>
-<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" (click)="_id='0';
-first_name='';
-last_name='';
-employee_id='';
-department='';
-designation='';
-gender='';
-email_address='';
-phone='';
-address='';
-city='';
-state='';
-zipcode='';
-country='';
-salary='';">Add Employee</button>
+<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" >Add Employee</button>
 <hr>
 <div class="row">
     <div class="col-md-4" *ngFor="let employee of employees">
@@ -43,7 +29,7 @@ salary='';">Add Employee</button>
           </button>
         </div>
         <div class="modal-body">
-            <form (submit)="addeditEmployee(_id);reloadpage();">
+            <form #myForm (submit)="addeditEmployee(_id);reloadpage();myForm.reset()">
                 <div class="form-group">
                     <label>First Name</label>
                     <input type="text" [(ngModel)]="first_name"  name="first_name" class="form-control">
