@@ -28,6 +28,10 @@ export class EmployeesComponent {
   zipcode:string='';
   country:string='';
   salary:string='';
+  fieldsetDisabled:boolean = false;
+  isSaveVisible:boolean=true; 
+
+  
 constructor(private employeeService:EmployeesService){
 
 }
@@ -114,6 +118,14 @@ this.employeeService.deleteEmployee(id).subscribe(data=>{
 
 reloadpage(){
   window.location.reload();
+}
+
+disableFields(){
+  this.fieldsetDisabled = true; 
+}
+
+enableFields(){
+  this.fieldsetDisabled = false;
 }
 
 }
